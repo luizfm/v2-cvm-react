@@ -4,8 +4,8 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
         "plugin:prettier/recommended",
+        "plugin:react/recommended",
         "airbnb"
     ],
     "parserOptions": {
@@ -23,6 +23,7 @@
     "rules": {
         "prettier/prettier": "error",
         "import/no-unresolved": "off",
+        "comma-dangle": "off",
         "no-unused-vars": "off",
         "semi": "off",
         "indent": [2, 2, {"SwitchCase": 1}],

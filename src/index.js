@@ -1,5 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Routes from '_routes/'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PrismicProvider } from '@prismicio/react';
 
-ReactDOM.render(<Routes />, document.getElementById('root'))
+import Routes from '_routes/';
+import { client } from '_api/prismic';
+
+ReactDOM.render(
+  <PrismicProvider client={client}>
+    <Routes />
+  </PrismicProvider>,
+  document.getElementById('root')
+);
