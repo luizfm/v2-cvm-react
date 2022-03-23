@@ -1,15 +1,15 @@
-const path = require('path')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
-const miniCssPlugin = new MiniCssExtractPlugin()
+const miniCssPlugin = new MiniCssExtractPlugin();
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: '/public/index.html',
   filename: './index.html',
-})
+});
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
@@ -76,7 +76,8 @@ module.exports = {
       _utils: path.resolve(__dirname, 'src/utils'),
       _hooks: path.resolve(__dirname, 'src/hooks'),
       _services: path.resolve(__dirname, 'src/services'),
+      _api: path.resolve(__dirname, 'src/api'),
     },
   },
   plugins: [htmlPlugin, miniCssPlugin],
-}
+};

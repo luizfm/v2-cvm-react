@@ -3,5 +3,8 @@
   "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,
   "files.autoSave": "onFocusChange",
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "cSpell.words": [
+    "Prismic"
+  ]
 }
