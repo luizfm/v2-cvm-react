@@ -19,5 +19,9 @@ export const client = prismic.createClient(endpoint, {
       type: 'home_page',
       path: '/home',
     },
+    {
+      type: 'base_app',
+      path: '/',
+    },
   ],
 });

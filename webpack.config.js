@@ -16,6 +16,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   devServer: {
     static: {
@@ -77,6 +78,8 @@ module.exports = {
       _hooks: path.resolve(__dirname, 'src/hooks'),
       _services: path.resolve(__dirname, 'src/services'),
       _api: path.resolve(__dirname, 'src/api'),
+      _modules: path.resolve(__dirname, 'src/modules'),
+      _store: path.resolve(__dirname, 'src/store'),
     },
   },
   plugins: [htmlPlugin, miniCssPlugin],

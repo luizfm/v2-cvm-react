@@ -10,7 +10,7 @@ import App from '../App';
 const Routes = () => (
   <Router>
     <Switch>
-      <Route path="/home" element={<App />} />
+      <Route path="/home-page" element={<App />} />
     </Switch>
   </Router>
 );
