@@ -7,9 +7,11 @@ import { GET_PRISMIC_DOCUMENT } from './actions';
 const INITIAL_STATE = Map();
 
 const reducer = createReducer(INITIAL_STATE, {
-  [GET_PRISMIC_DOCUMENT.ACTION]: (state, { payload }) => {
-    const prismicDocState = formatPrismicDocument(payload);
-    return state.set([`${prismicDocState.type}`], prismicDocState.slices);
+  [GET_PRISMIC_DOCUMENT.FULFILLED]: (state, { payload }) => {
+    // const prismicDocState = formatPrismicDocument(payload);
+    console.log(payload, 'aqui');
+    // return state.set(`${prismicDocState.type}`, prismicDocState.slices);
+    return state;
   },
 });
 
