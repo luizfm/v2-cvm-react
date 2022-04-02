@@ -133,7 +133,6 @@ export const formatSlices = (slices) => {
 
 export const formatPrismicDocument = (prismic) => {
   let formattedDocument = {};
-  console.log({ prismic });
   prismic.forEach((document) => {
     if (document.type) {
       formattedDocument = {
@@ -151,6 +150,5 @@ export const formatPrismicDocument = (prismic) => {
     }
   });
 
-  console.log(formattedDocument);
   return formattedDocument;
 };

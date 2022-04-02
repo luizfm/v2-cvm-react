@@ -1,53 +1,59 @@
 import React, { useEffect, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import humps from 'humps';
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
-import Button from '_components/button';
 import ReactBoilerplateImage from '_assets/images/boilerplate.jpg';
+import BaseApp from '_components/base-app';
 import { getPrismicDocument } from './modules/prismic/actions';
+import {
+  getPrismicBaseApp,
+  getPrismicDocumentByName,
+} from './modules/prismic/selectors';
+import { getSlices } from './constants/prismic';
 
 import './styles/_colors.css';
 import './styles/global.css';
 import styles from './styles.css';
 
+const PRISMIC_GLOBAL_TYPE = {
+  BASE_APP: 'base_app',
+};
+
 const App = () => {
   const { pathname } = useLocation();
+
   const documentName = useMemo(() => {
     const decamelizedPath = pathname.replace(/-/gi, '_');
     const splitedPath = decamelizedPath.split('/');
     const docName = splitedPath[splitedPath.length - 1];
 
     return docName;
-  }, []);
-  const [document] = useAllPrismicDocumentsByType(documentName);
-  const [baseApp] = useAllPrismicDocumentsByType('base_app');
+  }, [pathname]);
+
+  const prismicDocument = useSelector(
+    (state) => getPrismicDocumentByName(state, documentName) || {}
+  );
+
+  const prismicBaseApp = useSelector(getPrismicBaseApp);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (document) {
-      dispatch(getPrismicDocument(document));
-    }
-  }, [document]);
+    dispatch(getPrismicDocument(PRISMIC_GLOBAL_TYPE.BASE_APP));
+  }, [dispatch]);
 
   useEffect(() => {
-    if (baseApp) {
-      dispatch(getPrismicDocument(baseApp));
-    }
-  }, [baseApp]);
+    dispatch(getPrismicDocument(documentName));
+  }, [dispatch, documentName]);
 
   return (
     <div className={styles['app-container']}>
-      <h1 className={styles['app-boilerplate-title']}>
-        React Boilerplate working!!!
-      </h1>
-      <Button />
-      <img
-        className={styles['boilerplate-image']}
-        src={ReactBoilerplateImage}
-        alt="React boilerplate working"
-      />
+      <BaseApp prismic={prismicBaseApp}>
+        {Object.keys(prismicDocument).map(
+          (slice, index) => getSlices(prismicDocument[slice], index)[slice]
+        )}
+      </BaseApp>
     </div>
   );
 };

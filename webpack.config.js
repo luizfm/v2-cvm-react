@@ -1,10 +1,12 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 const miniCssPlugin = new MiniCssExtractPlugin();
+const dotenv = new Dotenv();
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: '/public/index.html',
@@ -79,8 +81,9 @@ module.exports = {
       _services: path.resolve(__dirname, 'src/services'),
       _api: path.resolve(__dirname, 'src/api'),
       _modules: path.resolve(__dirname, 'src/modules'),
+      _middleware: path.resolve(__dirname, 'src/middleware'),
       _store: path.resolve(__dirname, 'src/store'),
     },
   },
-  plugins: [htmlPlugin, miniCssPlugin],
+  plugins: [htmlPlugin, miniCssPlugin, dotenv],
 };
