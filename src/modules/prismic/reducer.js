@@ -8,10 +8,8 @@ const INITIAL_STATE = Map();
 
 const reducer = createReducer(INITIAL_STATE, {
   [GET_PRISMIC_DOCUMENT.FULFILLED]: (state, { payload }) => {
-    // const prismicDocState = formatPrismicDocument(payload);
-    console.log(payload, 'aqui');
-    // return state.set(`${prismicDocState.type}`, prismicDocState.slices);
-    return state;
+    const prismicDocState = formatPrismicDocument(payload.results);
+    return state.set(`${prismicDocState.type}`, prismicDocState.slices);
   },
 });
 

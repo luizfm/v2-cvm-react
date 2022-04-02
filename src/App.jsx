@@ -4,13 +4,21 @@ import { useLocation } from 'react-router-dom';
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
 import ReactBoilerplateImage from '_assets/images/boilerplate.jpg';
+import BaseApp from '_components/base-app';
 import { getPrismicDocument } from './modules/prismic/actions';
+import {
+  getPrismicBaseApp,
+  getPrismicDocumentByName,
+} from './modules/prismic/selectors';
+import { getSlices } from './constants/prismic';
 
 import './styles/_colors.css';
 import './styles/global.css';
 import styles from './styles.css';
-import { getPrismicDocumentByName } from './modules/prismic/selectors';
-import { getSlices } from './constants/prismic';
+
+const PRISMIC_GLOBAL_TYPE = {
+  BASE_APP: 'base_app',
+};
 
 const App = () => {
   const { pathname } = useLocation();
@@ -21,27 +29,31 @@ const App = () => {
     const docName = splitedPath[splitedPath.length - 1];
 
     return docName;
-  }, []);
+  }, [pathname]);
 
   const prismicDocument = useSelector(
     (state) => getPrismicDocumentByName(state, documentName) || {}
   );
 
+  const prismicBaseApp = useSelector(getPrismicBaseApp);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPrismicDocument('base_app'));
-  }, []);
+    dispatch(getPrismicDocument(PRISMIC_GLOBAL_TYPE.BASE_APP));
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getPrismicDocument(documentName));
-  }, []);
+  }, [dispatch, documentName]);
 
   return (
     <div className={styles['app-container']}>
-      {Object.keys(prismicDocument).map(
-        (slice, index) => getSlices(prismicDocument[slice], index)[slice]
-      )}
+      <BaseApp prismic={prismicBaseApp}>
+        {Object.keys(prismicDocument).map(
+          (slice, index) => getSlices(prismicDocument[slice], index)[slice]
+        )}
+      </BaseApp>
     </div>
   );
 };
