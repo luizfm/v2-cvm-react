@@ -41,7 +41,7 @@
       .nav-item {
         font-size: 1.6rem;
         line-height: 2rem;
-        color: var(--gray-80);
+        color: white;
         font-weight: 500;
         transition: color 0.3s;
 
@@ -50,7 +50,7 @@
         }
 
         &:hover {
-          color: white;
+          color: var(--gray-80);
         }
       }
     }

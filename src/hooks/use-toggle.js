@@ -4,7 +4,6 @@ export default () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = useCallback(() => {
-    console.log('aqui');
     setIsOpen((prevValue) => !prevValue);
   }, []);
 

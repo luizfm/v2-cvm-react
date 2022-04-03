@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { headerItemsProps } from '_utils/proptypes';
+import { itemsProps } from '_utils/proptypes';
 import Modal from '_components/modal';
 import CloseIcon from '_assets/icons/close-icon.svg';
 import IconButton from '_components/icon-button';
@@ -35,7 +35,7 @@ const HeaderMenuModal = ({ navItems, onExit }) => (
 );
 
 HeaderMenuModal.propTypes = {
-  navItems: headerItemsProps.isRequired,
+  navItems: itemsProps.isRequired,
   onExit: PropTypes.func,
 };
 

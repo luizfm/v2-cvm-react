@@ -1,0 +1,35 @@
+.footer-item-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+
+  .footer-item-title {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+
+  .footer-items {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.2rem;
+
+    .nav-item {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: white;
+      text-align: center;
+
+      &.link {
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--gray-80);
+        }
+      }
+    }
+  }
+}
