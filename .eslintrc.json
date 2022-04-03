@@ -24,6 +24,7 @@
     "rules": {
         "prettier/prettier": "error",
         "import/no-unresolved": "off",
+        "object-curly-newline": "off",
         "comma-dangle": "off",
         "no-unused-vars": "off",
         "implicit-arrow-linebreak": "off",

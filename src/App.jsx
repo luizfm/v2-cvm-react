@@ -1,9 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
-import ReactBoilerplateImage from '_assets/images/boilerplate.jpg';
 import BaseApp from '_components/base-app';
 import { getPrismicDocument } from './modules/prismic/actions';
 import {

@@ -11,3 +11,8 @@ export const headerProps = PropTypes.shape({
   items: headerItemsProps,
   type: PropTypes.string,
 });
+
+export const svgPropTypes = PropTypes.shape({
+  viewBox: PropTypes.string,
+  id: PropTypes.string,
+});
