@@ -4,19 +4,17 @@ import PropTypes from 'prop-types';
 import Header from '_components/header';
 import { headerProps } from '_utils/proptypes';
 
-const BaseApp = ({ children, prismic }) => {
-  console.log(prismic);
+import styles from './styles.css';
 
-  return (
-    <>
-      <Header navItems={prismic.header.items} />
-      <main>{children}</main>
-      <footer>
-        <div />
-      </footer>
-    </>
-  );
-};
+const BaseApp = ({ children, prismic }) => (
+  <div className={styles['base-app-container']}>
+    <Header navItems={prismic.header.items} />
+    <main className={styles.content}>{children}</main>
+    <footer>
+      <div />
+    </footer>
+  </div>
+);
 
 BaseApp.propTypes = {
   children: PropTypes.node.isRequired,

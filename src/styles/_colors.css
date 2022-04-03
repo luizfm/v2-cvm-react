@@ -1,8 +1,19 @@
 :root {
+  --header-height: 8rem;
+
   --gray-4: #eeeeee;
   --gray-8: #cccccc;
   --gray-24: #999999;
   --gray-40: #666666;
+  --gray-64: #777989;
   --gray-80: #333333;
   --gray-100: #222222;
+
+  --blue-100: #00CFF4;
+  --green-100: #28E7B1;
+  --yellow-500: #F3C888;
+  --pink-500: #FF92CD;
+
+  --primary-lightest: #f4f5ff;
+  --primary-brand-light: #bec6fb;
 }
