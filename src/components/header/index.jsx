@@ -2,16 +2,16 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
-import { headerItemsProps } from '_utils/proptypes';
 import useWindowScroll from '_hooks/use-window-scroll';
 import useToggle from '_hooks/use-toggle';
 import useWindowSize from '_hooks/use-window-size';
 import CvmLogo from '_assets/images/cvm-logo.png';
 import IconButton from '_components/icon-button';
 import MenuIcon from '_assets/icons/menu-icon.svg';
+import { itemsProps } from '_utils/proptypes';
+import HeaderMenuModal from '_components/header/header-menu-modal';
 
 import styles from './styles.css';
-import HeaderMenuModal from './header-menu-modal';
 
 const Header = ({ navItems }) => {
   const scroll = useWindowScroll();
@@ -60,7 +60,7 @@ const Header = ({ navItems }) => {
 };
 
 Header.propTypes = {
-  navItems: headerItemsProps.isRequired,
+  navItems: itemsProps.isRequired,
 };
 
 export default React.memo(Header);
