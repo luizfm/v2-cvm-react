@@ -4,7 +4,7 @@ import { PrismicProvider } from '@prismicio/react';
 import { Provider } from 'react-redux';
 
 import 'swiper/css/bundle';
-import './components/slider/styles.css';
+import './components/slider/lib/lib-styles.css';
 
 import Routes from '_routes/';
 import { client } from '_services/prismic';

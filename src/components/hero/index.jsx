@@ -5,21 +5,16 @@ import Slider from '_components/slider';
 
 import styles from './styles.css';
 
-const Hero = ({ slice }) => {
-  console.log(slice);
-
-  return (
-  // <section
-  //   className={styles['hero-section-container']}
-  //   style={{
-  //     backgroundImage: `url(${slice.backgroundImage.url})`,
-  //   }}
-  // >
-
-    // </section>
+const Hero = ({ slice }) => (
+  <section
+    className={styles['hero-section-container']}
+    style={{
+      backgroundImage: `url(${slice.backgroundImage.url})`,
+    }}
+  >
     <Slider items={slice.items} />
-  );
-};
+  </section>
+);
 
 Hero.propTypes = {
   slice: prismicSlicePropTypes.isRequired,

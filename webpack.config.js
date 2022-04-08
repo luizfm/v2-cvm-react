@@ -61,7 +61,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          path.resolve(__dirname, './src/components/slider/lib'),
+        ],
         use: [
           'style-loader',
           {
@@ -83,6 +86,21 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
+          },
+        ],
+      },
+      {
+        test: /lib-styles\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              // localIdentName is needed to be able to work with styles.css files
+              modules: { localIdentName: '[local]' },
+              sourceMap: true,
+              importLoaders: 1,
+            },
           },
         ],
       },
