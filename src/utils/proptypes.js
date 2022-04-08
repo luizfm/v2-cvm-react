@@ -29,3 +29,19 @@ export const footerProps = PropTypes.shape({
     items: itemsProps,
   }),
 });
+
+export const prismicSlicePropTypes = PropTypes.shape({
+  backgroundImage: PropTypes.shape({
+    dimensions: PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
+    alt: PropTypes.string,
+    copyright: PropTypes.string,
+    url: PropTypes.string,
+  }),
+  imageUrl: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.shape({})),
+  title: PropTypes.string,
+  type: PropTypes.string,
+});
