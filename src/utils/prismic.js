@@ -3,6 +3,16 @@ export const formatSliceItems = (sliceItems) => {
   let formattedSlicesItems = [];
 
   sliceItems.forEach((item) => {
+    if (item.title) {
+      formattedSlicesItems = [
+        ...formattedSlicesItems,
+        {
+          title: item.title?.[0].text,
+          text: item.text?.[0].text,
+        },
+      ];
+    }
+
     if (item.company_name) {
       formattedSlicesItems = [
         ...formattedSlicesItems,

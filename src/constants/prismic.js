@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from '_components/hero';
 import SocialMedia from '_components/social-media';
 import Accounting from '_components/accounting';
+import Accordion from '_components/accordion';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -11,6 +12,7 @@ const TYPES = {
   ACCOUNTING: 'accounting',
   HEADER: 'header',
   FOOTER: 'footer',
+  ACCORDION: 'accordion',
 };
 
 export const getSlices = (slice, index) => ({
@@ -22,4 +24,5 @@ export const getSlices = (slice, index) => ({
   //   <CompaniesCarousel key={`companies-carousel-${index}`} slice={slice} />
   // ),
   [TYPES.ACCOUNTING]: <Accounting key={`accounting-${index}`} slice={slice} />,
+  [TYPES.ACCORDION]: <Accordion key={`accordion-${index}`} slice={slice} />,
 });
