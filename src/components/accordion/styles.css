@@ -1,0 +1,23 @@
+.accordion-container {
+  padding: 6.8rem 0 4.8rem;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+
+  .accordion-section-title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 600;
+    color: var(--blue-500);
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
+
+  .accordion-wrapper {
+    border: 0.1rem solid var(--gray-8);
+    border-radius: 0.8rem;
+    box-shadow: 0.1rem 0.3rem 0.6rem rgba(0, 0.42, 0.71, 0.15);
+    width: 72rem;
+    margin: 0 auto;
+  }
+}
