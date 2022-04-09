@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Hero from '_components/hero';
+import SocialMedia from '_components/social-media';
+import Accounting from '_components/accounting';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -13,11 +15,11 @@ const TYPES = {
 
 export const getSlices = (slice, index) => ({
   [TYPES.HERO_SECTION]: <Hero key={`hero-section-${index}`} slice={slice} />,
-  // [TYPES.SOCIAL_MEDIA]: (
-  //   <SocialMedia key={`social-media-${index}`} slice={slice} />
-  // ),
+  [TYPES.SOCIAL_MEDIA]: (
+    <SocialMedia key={`social-media-${index}`} slice={slice} />
+  ),
   // [TYPES.COMPANIES_CAROUSEL]: (
   //   <CompaniesCarousel key={`companies-carousel-${index}`} slice={slice} />
   // ),
-  // [TYPES.ACCOUNTING]: <Accounting key={`accounting-${index}`} slice={slice} />,
+  [TYPES.ACCOUNTING]: <Accounting key={`accounting-${index}`} slice={slice} />,
 });

@@ -48,6 +48,23 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        include: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: [
+          /node_modules/,
+          path.resolve(__dirname, './src/components/slider/lib'),
+        ],
         use: [
           'style-loader',
           {
@@ -56,16 +73,41 @@ module.exports = {
               // localIdentName is needed to be able to work with styles.css files
               modules: { localIdentName: '[local]___[hash:base64:5]' },
               sourceMap: true,
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: ['node_modules'],
+              },
+            },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
+      },
+      {
+        test: /lib-styles\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              // localIdentName is needed to be able to work with styles.css files
+              modules: { localIdentName: '[local]' },
+              sourceMap: true,
               importLoaders: 1,
             },
           },
-          'sass-loader',
-          'postcss-loader',
         ],
       },
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
+        exclude: /(.*\/backgrounds|slick-carousel)/,
       },
     ],
   },
@@ -73,6 +115,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       _components: path.resolve(__dirname, 'src/components'),
+      _constants: path.resolve(__dirname, 'src/constants'),
       _assets: path.resolve(__dirname, 'src/assets'),
       _views: path.resolve(__dirname, 'src/views'),
       _routes: path.resolve(__dirname, 'src/routes'),

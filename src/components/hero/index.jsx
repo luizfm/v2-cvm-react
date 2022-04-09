@@ -1,20 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import { prismicSlicePropTypes } from '_utils/proptypes';
+import Slider from '_components/slider';
 
 import styles from './styles.css';
 
 const Hero = ({ slice }) => (
-  <section>
-    <img
-      className={styles['hero-image']}
-      src={slice.backgroundImage.url}
-      alt="Helper glyer"
-    />
+  <section
+    className={styles['hero-section-container']}
+    style={{
+      backgroundImage: `url(${slice.backgroundImage.url})`,
+    }}
+  >
+    <Slider items={slice.items} />
   </section>
 );
 
 Hero.propTypes = {
-  slice: PropTypes.shape({}).isRequired,
+  slice: prismicSlicePropTypes.isRequired,
 };
 
 export default Hero;

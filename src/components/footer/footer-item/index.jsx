@@ -21,7 +21,9 @@ const FooterItem = ({ sectionName, navItems, className }) => (
             {navItem.label}
           </Link>
         ) : (
-          <span className={styles['nav-item']}>{navItem.label}</span>
+          <span key={navItem.label} className={styles['nav-item']}>
+            {navItem.label}
+          </span>
         )
       )}
     </div>

@@ -55,6 +55,7 @@
     "react": "^17.0.2",
     "react-aria-modal": "^4.0.1",
     "react-dom": "^17.0.2",
+    "react-lottie": "^1.2.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.2",
     "redux": "^4.1.2",
@@ -63,6 +64,8 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^6.1.2",
     "redux-thunk": "^2.4.1",
-    "reselect": "^4.1.5"
+    "reselect": "^4.1.5",
+    "swiper": "^8.0.7",
+    "url-loader": "^4.1.1"
   }
 }

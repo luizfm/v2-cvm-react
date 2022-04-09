@@ -13,6 +13,13 @@ export const formatSliceItems = (sliceItems) => {
       ];
     }
 
+    if (item.carousel_image_item) {
+      formattedSlicesItems = [
+        ...formattedSlicesItems,
+        item.carousel_image_item.url,
+      ];
+    }
+
     if (item.label) {
       formattedSlicesItems = [
         ...formattedSlicesItems,
@@ -27,7 +34,8 @@ export const formatSliceItems = (sliceItems) => {
       formattedSlicesItems = [
         ...formattedSlicesItems,
         {
-          facebook: item.facebook[0].text,
+          name: 'facebook',
+          link: item.facebook[0].text,
         },
       ];
     }
@@ -36,7 +44,8 @@ export const formatSliceItems = (sliceItems) => {
       formattedSlicesItems = [
         ...formattedSlicesItems,
         {
-          twitter: item.twitter[0].text,
+          name: 'twitter',
+          link: item.twitter[0].text,
         },
       ];
     }
@@ -45,7 +54,8 @@ export const formatSliceItems = (sliceItems) => {
       formattedSlicesItems = [
         ...formattedSlicesItems,
         {
-          instagram: item.instagram[0].text,
+          name: 'instagram',
+          link: item.instagram[0].text,
         },
       ];
     }
