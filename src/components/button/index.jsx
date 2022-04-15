@@ -10,6 +10,7 @@ import styles from './styles.css';
 
 export const ButtonTheme = {
   GRAY: 'gray',
+  LIGHT_GREEN: 'lightGreen',
 };
 
 const Button = ({

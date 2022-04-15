@@ -14,6 +14,7 @@ const Routes = () => (
       <Route path="/" element={<Navigate to="/home-page" replace />} />
       <Route path="/home-page" element={<App />} />
       <Route path="/projects" element={<App />} />
+      <Route path="/news/:newsId" element={<App />} />
     </Switch>
   </Router>
 );

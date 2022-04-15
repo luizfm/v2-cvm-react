@@ -1,0 +1,49 @@
+.prismic-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  color: var(--gray-100);
+  font-weight: 600;
+  margin: 1.2rem;
+  text-align: center;
+}
+
+  h2 {
+    font-size: 2.0rem;
+    line-height: 2.8rem;
+    color: var(--gray-100);
+    font-weight: 500;
+    margin: 1.2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--gray-80);
+    max-width: 102.4rem;
+    margin: 1.2rem;
+  }
+
+  li {
+    list-style: square;
+    font-size: 1.4rem;
+
+    &::marker {
+      color: var(--green-100);
+    }
+  }
+
+  img {
+    margin: 3.2rem auto;
+    border-radius: 0.4rem;
+    max-height: 50rem;
+    max-width: 50rem;
+    object-fit: contain;
+  }
+}

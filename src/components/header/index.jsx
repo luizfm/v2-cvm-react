@@ -27,11 +27,13 @@ const Header = ({ navItems }) => {
       })}
     >
       <div className={styles['nav-wrapper']}>
-        <img
-          className={styles['cvm-logo']}
-          src={CvmLogo}
-          alt="Hand holding a world"
-        />
+        <Link to="/">
+          <img
+            className={styles['cvm-logo']}
+            src={CvmLogo}
+            alt="Hand holding a world"
+          />
+        </Link>
         {isMedium || isMobile ? (
           <IconButton
             icon={MenuIcon}
@@ -40,7 +42,7 @@ const Header = ({ navItems }) => {
           />
         ) : (
           <nav className={styles['nav-container']}>
-            {navItems.map((navItem) => (
+            {navItems?.map((navItem) => (
               <Link
                 className={styles['nav-item']}
                 key={navItem.label}
@@ -60,7 +62,11 @@ const Header = ({ navItems }) => {
 };
 
 Header.propTypes = {
-  navItems: itemsProps.isRequired,
+  navItems: itemsProps,
+};
+
+Header.defaultProps = {
+  navItems: [],
 };
 
 export default React.memo(Header);
