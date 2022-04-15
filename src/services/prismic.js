@@ -5,3 +5,6 @@ export const client = new prismic.Client(process.env.PRISMIC_REPOSITORY_URL, {
 });
 
 export const getDocumentByType = (type, params) => client.getByType(`${type}`);
+
+export const getDocumentByTypeAndUID = (type, uid, params) =>
+  client.getByUID(`${type}`, `${uid}`);

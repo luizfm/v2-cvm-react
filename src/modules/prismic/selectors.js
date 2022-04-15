@@ -23,3 +23,29 @@ export const prismicFooterSelector = createSelector(
     }));
   }
 );
+
+export const prismicNewsElementsSelector = (state, view) =>
+  state.prismic.getIn(['news', `${view}`, 'pageElements']);
+
+export const prismicNewsSelector = (state) => state.prismic.get('news');
+
+export const prismicNewsResumeSelector = createSelector(
+  prismicNewsSelector,
+  (newsList) => {
+    const slicedNews = newsList
+      ?.get('post')
+      ?.sort((a, b) => a.publicationDate - b.publicationDate)
+      .slice(0, 4);
+    const newsResume = slicedNews?.keySeq().toArray();
+
+    const list = newsResume?.map((key) => ({
+      title: key,
+      publicationDate: slicedNews.getIn([`${key}`, 'publicationDate']),
+    }));
+
+    return list;
+  }
+);
+
+export const getPrismicNewsByUIDSelector = (state, documentUID) =>
+  state.prismic.getIn(['news', 'post', `${documentUID}`]);

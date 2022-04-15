@@ -172,3 +172,41 @@ export const formatPrismicDocument = (prismic) => {
 
   return formattedDocument;
 };
+
+export const formatPrismicAsRichText = (prismic) => {
+  let documents = [];
+
+  prismic.forEach((document) => {
+    if (document.uid) {
+      documents = [
+        ...documents,
+        {
+          uid: document.uid,
+          type: document.type,
+          publicationDate: document.last_publication_date,
+          elements: document.data.content,
+          group: document.data.element_group[0]?.text,
+        },
+      ];
+    }
+  });
+
+  return documents;
+};
+
+export const prismicPathFormatter = (pathname) => {
+  const decamelizedPath = pathname.replace(/-/gi, '_');
+  const splittedPath = decamelizedPath.split('/');
+
+  if (splittedPath.length > 1) {
+    const [_, docName, uid] = splittedPath;
+    return {
+      docName,
+      uid,
+    };
+  }
+
+  const [_, docName] = splittedPath;
+
+  return { docName };
+};

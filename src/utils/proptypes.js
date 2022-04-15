@@ -41,7 +41,29 @@ export const prismicSlicePropTypes = PropTypes.shape({
     url: PropTypes.string,
   }),
   imageUrl: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.shape({})),
+  items: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.shape({})),
+  ]),
   title: PropTypes.string,
   type: PropTypes.string,
+});
+
+export const prismicRichTextPropTypes = PropTypes.shape({
+  type: PropTypes.string,
+  text: PropTypes.string,
+  spans: PropTypes.arrayOf(
+    PropTypes.shape({
+      start: PropTypes.number,
+      end: PropTypes.number,
+      type: PropTypes.string,
+    })
+  ),
+  dimensions: PropTypes.shape({
+    width: PropTypes.number,
+    height: PropTypes.number,
+  }),
+  alt: PropTypes.string,
+  copyright: PropTypes.string,
+  url: PropTypes.string,
 });

@@ -3,4 +3,8 @@
   height: 50rem;
   width: 90%;
   border-radius: 0.8rem;
+
+  @media (--sm-viewport), (--md-viewport) {
+    width: 75%;
+  }
 }

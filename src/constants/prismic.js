@@ -4,6 +4,8 @@ import Hero from '_components/hero';
 import SocialMedia from '_components/social-media';
 import Accounting from '_components/accounting';
 import Accordion from '_components/accordion';
+import NewsSection from '_components/news-section';
+import Post from '_views/post';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -13,6 +15,8 @@ const TYPES = {
   HEADER: 'header',
   FOOTER: 'footer',
   ACCORDION: 'accordion',
+  NEWS_SECTION: 'news_section',
+  POST: 'post',
 };
 
 export const getSlices = (slice, index) => ({
@@ -20,9 +24,10 @@ export const getSlices = (slice, index) => ({
   [TYPES.SOCIAL_MEDIA]: (
     <SocialMedia key={`social-media-${index}`} slice={slice} />
   ),
-  // [TYPES.COMPANIES_CAROUSEL]: (
-  //   <CompaniesCarousel key={`companies-carousel-${index}`} slice={slice} />
-  // ),
   [TYPES.ACCOUNTING]: <Accounting key={`accounting-${index}`} slice={slice} />,
   [TYPES.ACCORDION]: <Accordion key={`accordion-${index}`} slice={slice} />,
+  [TYPES.POST]: <Post key={`news-${index}`} slice={slice} />,
+  [TYPES.NEWS_SECTION]: (
+    <NewsSection key={`news-section-${index}`} slice={slice} />
+  ),
 });

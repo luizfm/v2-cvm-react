@@ -76,6 +76,7 @@ module.exports = {
               importLoaders: 2,
             },
           },
+          { loader: 'scoped-css-loader' },
           {
             loader: 'sass-loader',
             options: {

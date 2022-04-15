@@ -1,36 +1,43 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Map, toJS } from 'immutable';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import BaseApp from '_components/base-app';
-import { getPrismicDocument } from './modules/prismic/actions';
+import { prismicPathFormatter } from '_utils/prismic';
 import {
   getPrismicBaseApp,
   getPrismicDocumentByName,
-} from './modules/prismic/selectors';
-import { getSlices } from './constants/prismic';
+} from '_modules/prismic/selectors';
+import {
+  getPrismicDocument,
+  getPrismicDocumentByUID,
+} from '_modules/prismic/actions';
+import { getSlices } from '_constants/prismic';
 
 import './styles/_colors.css';
 import './styles/global.css';
 import styles from './styles.css';
 
-const PRISMIC_GLOBAL_TYPE = {
+const PRISMIC_TYPE = {
   BASE_APP: 'base_app',
+  NEWS: 'news',
 };
 
 const App = () => {
   const { pathname } = useLocation();
+  const [documentName, setDocumentName] = useState('');
+  const [documentUID, setDocumentUID] = useState('');
 
-  const documentName = useMemo(() => {
-    const decamelizedPath = pathname.replace(/-/gi, '_');
-    const splitedPath = decamelizedPath.split('/');
-    const docName = splitedPath[splitedPath.length - 1];
+  useEffect(() => {
+    const { docName, uid } = prismicPathFormatter(pathname);
 
-    return docName;
+    setDocumentName(docName);
+    setDocumentUID(uid);
   }, [pathname]);
 
   const prismicDocument = useSelector(
-    (state) => getPrismicDocumentByName(state, documentName) || {}
+    (state) => getPrismicDocumentByName(state, documentName) || Map()
   );
 
   const prismicBaseApp = useSelector(getPrismicBaseApp);
@@ -38,18 +45,31 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPrismicDocument(PRISMIC_GLOBAL_TYPE.BASE_APP));
+    dispatch(getPrismicDocument(PRISMIC_TYPE.BASE_APP));
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getPrismicDocument(documentName));
-  }, [dispatch, documentName]);
+    if (documentName) {
+      if (documentUID) {
+        dispatch(
+          getPrismicDocumentByUID(
+            documentName,
+            documentUID,
+            PRISMIC_TYPE.NEWS === documentName
+          )
+        );
+      } else {
+        dispatch(getPrismicDocument(documentName));
+      }
+    }
+  }, [dispatch, documentName, documentUID]);
 
   return (
     <div className={styles['app-container']}>
       <BaseApp prismic={prismicBaseApp}>
-        {Object.keys(prismicDocument).map(
-          (slice, index) => getSlices(prismicDocument[slice], index)[slice]
+        {Object.keys(prismicDocument?.toJS()).map(
+          (slice, index) =>
+            getSlices(prismicDocument?.toJS()[slice], index)[slice]
         )}
       </BaseApp>
     </div>
