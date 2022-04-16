@@ -1,0 +1,19 @@
+.text-and-image-item-container {
+  display: flex;
+  font-size: 1.4rem;
+  column-gap: 4.8rem;
+
+
+  &.image-text {
+    flex-direction: row-reverse;
+  }
+
+  .image {
+    height: 30rem;
+    width: 45rem;
+    justify-self: center;
+    align-self: center;
+    object-fit: contain;
+    border-radius: 0.4rem;
+  }
+}
