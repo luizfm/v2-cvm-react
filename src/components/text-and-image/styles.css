@@ -3,6 +3,10 @@
   flex-direction: column;
   padding: 8rem 4.8rem;
 
+  @media (--md-viewport), (--sm-viewport) {
+    padding: 8rem 2.4rem;
+  }
+
   .title {
     font-size: 2.4rem;
     line-height: 3.2rem;
@@ -12,6 +16,6 @@
   }
 
   .text-and-image-item {
-    margin: 4.8rem;
+    margin: 4.8rem 0;
   }
 }
