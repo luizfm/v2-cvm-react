@@ -1,0 +1,37 @@
+.table {
+  margin-top: 2.4rem;
+
+  .table-head-wrapper {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    font-weight: 500;
+  }
+
+  .head-cell {
+    background-color: var(--pink-500);
+    padding: 1.2rem 1.6rem;
+    color: white;
+    border: 0.1rem solid var(--gray-8);
+
+    &:first-of-type {
+      border-top-left-radius: 0.4rem;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 0.4rem;
+    }
+  }
+
+  .body-cell {
+    border: 0.1rem solid var(--gray-8);
+    vertical-align: top;
+
+    &:first-of-type {
+      border-bottom-left-radius: 0.4rem;
+    }
+
+    &:last-of-type {
+      border-bottom-right-radius: 0.4rem;
+    }
+  }
+}

@@ -26,10 +26,10 @@ const TextAndImageItem = ({ content, image, variant, className }) => (
 );
 
 TextAndImageItem.propTypes = {
-  content: prismicRichTextPropTypes.isRequired,
+  content: PropTypes.arrayOf(prismicRichTextPropTypes).isRequired,
   className: PropTypes.string,
   image: PropTypes.string.isRequired,
-  variant: PropTypes.oneOfType(Object.values(TextAndImageItemVariant)),
+  variant: PropTypes.oneOf(Object.values(TextAndImageItemVariant)),
 };
 
 TextAndImageItem.defaultProps = {

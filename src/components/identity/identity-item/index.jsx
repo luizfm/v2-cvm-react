@@ -18,7 +18,9 @@ const IdentityItem = ({ subtitle, content, variant, className }) => (
     ) : (
       <ul className={styles.list}>
         {content.map((item) => (
-          <li className={styles['list-item']}>{item}</li>
+          <li key={item} className={styles['list-item']}>
+            {item}
+          </li>
         ))}
       </ul>
     )}
@@ -28,8 +30,11 @@ const IdentityItem = ({ subtitle, content, variant, className }) => (
 IdentityItem.propTypes = {
   subtitle: PropTypes.string.isRequired,
   className: PropTypes.string,
-  variant: PropTypes.oneOfType(Object.values(IdentityItemVariant)),
-  content: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  variant: PropTypes.oneOf(Object.values(IdentityItemVariant)),
+  content: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
 };
 
 IdentityItem.defaultProps = {

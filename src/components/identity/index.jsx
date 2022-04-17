@@ -38,6 +38,7 @@ const Identity = ({ slice }) => {
         <div className={styles['identity-content']}>
           {Object.values(IDENTITY_ITEMS)?.map((item) => (
             <IdentityItem
+              key={item.value}
               content={slice[item.value]}
               subtitle={item.label}
               variant={identityItemVariant(item.value)}
