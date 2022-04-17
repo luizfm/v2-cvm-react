@@ -7,6 +7,7 @@ import Accordion from '_components/accordion';
 import NewsSection from '_components/news-section';
 import Post from '_views/post';
 import TextAndImage from '_components/text-and-image';
+import Identity from '_components/identity';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -37,4 +38,5 @@ export const getSlices = (slice, index) => ({
   [TYPES.TEXT_AND_IMAGE]: (
     <TextAndImage key={`text-and-image-${index}`} slice={slice} />
   ),
+  [TYPES.IDENTITY]: <Identity key={`identity-${index}`} slice={slice} />,
 });
