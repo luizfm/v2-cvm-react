@@ -27,6 +27,16 @@ export const formatSliceItems = (sliceItems) => {
       ];
     }
 
+    if (item.download_label) {
+      formattedSlicesItems = [
+        ...formattedSlicesItems,
+        {
+          downloadLabel: item.download_label?.[0].text,
+          downloadLink: item.download_link?.[0].text,
+        },
+      ];
+    }
+
     if (item.company_name) {
       formattedSlicesItems = [
         ...formattedSlicesItems,

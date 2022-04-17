@@ -22,10 +22,13 @@ const TextSection = ({ slice }) => {
   return (
     <section className={styles['text-section-container']}>
       <div className={styles['text-section-wrapper']}>
-        {slice.items.map((item) => (
-          <div className={styles['text-content']} key={item.title}>
+        {slice.items.map((item, index) => (
+          <div
+            className={styles['text-content']}
+            key={`${item.title}-${index + 1}`}
+          >
             <h1 className={styles.title}>{item.title}</h1>
-            <PrismicRichText content={item.content} />
+            <PrismicRichText content={item.content || []} />
           </div>
         ))}
         <LottieAnimation
