@@ -9,6 +9,9 @@ import Post from '_views/post';
 import TextAndImage from '_components/text-and-image';
 import Identity from '_components/identity';
 import Goals from '_components/goals';
+import TextSection from '_components/text-section';
+import DoubleTextSection from '_components/double-text-section';
+import MultipleDownloadLinks from '_components/multiple-download-links';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -21,6 +24,9 @@ const TYPES = {
   NEWS_SECTION: 'news_section',
   POST: 'post',
   TEXT_AND_IMAGE: 'text_and_image',
+  TEXT: 'text',
+  DOUBLE_TEXT: 'double_text',
+  MULTIPLE_DOWNLOADS_LINKS: 'multiple_download_links',
   IDENTITY: 'identity',
   GOALS: 'goals',
 };
@@ -41,4 +47,14 @@ export const getSlices = (slice, index) => ({
   ),
   [TYPES.IDENTITY]: <Identity key={`identity-${index}`} slice={slice} />,
   [TYPES.GOALS]: <Goals key={`goals-${index}`} slice={slice} />,
+  [TYPES.TEXT]: <TextSection key={`text-section-${index}`} slice={slice} />,
+  [TYPES.DOUBLE_TEXT]: (
+    <DoubleTextSection key={`double-text-section-${index}`} slice={slice} />
+  ),
+  [TYPES.MULTIPLE_DOWNLOADS_LINKS]: (
+    <MultipleDownloadLinks
+      key={`multiple-download-links-${index}`}
+      slice={slice}
+    />
+  ),
 });

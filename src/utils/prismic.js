@@ -27,6 +27,16 @@ export const formatSliceItems = (sliceItems) => {
       ];
     }
 
+    if (item.download_label) {
+      formattedSlicesItems = [
+        ...formattedSlicesItems,
+        {
+          downloadLabel: item.download_label?.[0].text,
+          downloadLink: item.download_link?.[0].text,
+        },
+      ];
+    }
+
     if (item.company_name) {
       formattedSlicesItems = [
         ...formattedSlicesItems,
@@ -112,12 +122,42 @@ export const formatSlices = (slices) => {
       };
     }
 
+    if (slice.primary.first_text) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          firstText: slice.primary.first_text,
+        },
+      };
+    }
+
+    if (slice.primary.second_text) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          secondText: slice.primary.second_text,
+        },
+      };
+    }
+
     if (slice.primary.title) {
       formattedSlices = {
         ...formattedSlices,
         [slice.slice_type]: {
           ...formattedSlices[slice.slice_type],
           title: slice.primary.title[0].text,
+        },
+      };
+    }
+
+    if (slice.primary.content) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          content: slice.primary.content,
         },
       };
     }

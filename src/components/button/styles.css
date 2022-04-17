@@ -12,6 +12,11 @@
   align-items: center;
   justify-content: center;
   column-gap: 1.2rem;
+
+  .adornment {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
 }
 
 /* Button Themes */
@@ -21,8 +26,6 @@
   color: white;
 
   .adornment {
-    height: 2.4rem;
-    width: 2.4rem;
     fill: white;
   }
 
@@ -36,10 +39,17 @@
   color: var(--gray-100);
 
   .adornment {
-    height: 2.4rem;
-    width: 2.4rem;
     fill: var(--gray-64);
   }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.yellow {
+  background-color: var(--yellow-500);
+  color: var(--gray-80);
 
   &:hover {
     filter: brightness(0.9);
