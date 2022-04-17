@@ -1,6 +1,8 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 
 import { prismicSlicePropTypes } from '_utils/proptypes';
+import LottieAnimation from '_components/lottie-animation';
+import SchoolLottie from '_assets/lotties/school-lottie.json';
 import IdentityItem, { IdentityItemVariant } from './identity-item';
 
 import styles from './styles.css';
@@ -42,6 +44,7 @@ const Identity = ({ slice }) => {
             />
           ))}
         </div>
+        <LottieAnimation lottieFile={SchoolLottie} />
       </div>
     </section>
   );

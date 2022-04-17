@@ -18,7 +18,7 @@ const IdentityItem = ({ subtitle, content, variant, className }) => (
     ) : (
       <ul className={styles.list}>
         {content.map((item) => (
-          <li>{item}</li>
+          <li className={styles['list-item']}>{item}</li>
         ))}
       </ul>
     )}
