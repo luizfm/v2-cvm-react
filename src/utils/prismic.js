@@ -112,12 +112,42 @@ export const formatSlices = (slices) => {
       };
     }
 
+    if (slice.primary.first_text) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          firstText: slice.primary.first_text,
+        },
+      };
+    }
+
+    if (slice.primary.second_text) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          secondText: slice.primary.second_text,
+        },
+      };
+    }
+
     if (slice.primary.title) {
       formattedSlices = {
         ...formattedSlices,
         [slice.slice_type]: {
           ...formattedSlices[slice.slice_type],
           title: slice.primary.title[0].text,
+        },
+      };
+    }
+
+    if (slice.primary.content) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          content: slice.primary.content,
         },
       };
     }
