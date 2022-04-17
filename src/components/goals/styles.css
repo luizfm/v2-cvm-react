@@ -1,0 +1,29 @@
+.goals-section-container {
+  padding: 8rem 4.8rem;
+
+  @media (--md-viewport), (--sm-viewport) {
+    padding: 8rem 2.4rem;
+  }
+
+  .goals-section-wrapper {
+    max-width: 112rem;
+    margin: 0 auto;
+
+    .title {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      color: var(--gray-100);
+      text-align: center;
+    }
+
+    .goals-content {
+      margin: 3.2rem;
+      padding-top: 3.2rem;
+      border-top: 0.2rem solid var(--gray-8);
+
+      @media (--md-viewport), (--sm-viewport) {
+        margin: 3.2rem 0;
+      }
+    }
+  }
+}

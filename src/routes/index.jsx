@@ -15,6 +15,8 @@ const Routes = () => (
       <Route path="/home-page" element={<App />} />
       <Route path="/projects" element={<App />} />
       <Route path="/news/:newsId" element={<App />} />
+      <Route path="/about-us" element={<App />} />
+      <Route path="/services" element={<App />} />
     </Switch>
   </Router>
 );

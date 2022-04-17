@@ -6,6 +6,9 @@ import Accounting from '_components/accounting';
 import Accordion from '_components/accordion';
 import NewsSection from '_components/news-section';
 import Post from '_views/post';
+import TextAndImage from '_components/text-and-image';
+import Identity from '_components/identity';
+import Goals from '_components/goals';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -17,6 +20,9 @@ const TYPES = {
   ACCORDION: 'accordion',
   NEWS_SECTION: 'news_section',
   POST: 'post',
+  TEXT_AND_IMAGE: 'text_and_image',
+  IDENTITY: 'identity',
+  GOALS: 'goals',
 };
 
 export const getSlices = (slice, index) => ({
@@ -30,4 +36,9 @@ export const getSlices = (slice, index) => ({
   [TYPES.NEWS_SECTION]: (
     <NewsSection key={`news-section-${index}`} slice={slice} />
   ),
+  [TYPES.TEXT_AND_IMAGE]: (
+    <TextAndImage key={`text-and-image-${index}`} slice={slice} />
+  ),
+  [TYPES.IDENTITY]: <Identity key={`identity-${index}`} slice={slice} />,
+  [TYPES.GOALS]: <Goals key={`goals-${index}`} slice={slice} />,
 });

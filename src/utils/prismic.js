@@ -13,6 +13,20 @@ export const formatSliceItems = (sliceItems) => {
       ];
     }
 
+    if (item.content) {
+      formattedSlicesItems = [
+        ...formattedSlicesItems,
+        {
+          content: item.content,
+          ...(item.image
+            ? {
+                image: item.image.url,
+              }
+            : {}),
+        },
+      ];
+    }
+
     if (item.company_name) {
       formattedSlicesItems = [
         ...formattedSlicesItems,
@@ -104,6 +118,58 @@ export const formatSlices = (slices) => {
         [slice.slice_type]: {
           ...formattedSlices[slice.slice_type],
           title: slice.primary.title[0].text,
+        },
+      };
+    }
+
+    if (slice.primary.mission_content) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          missionContent: slice.primary.mission_content[0].text,
+        },
+      };
+    }
+
+    if (slice.primary.vision_content) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          visionContent: slice.primary.vision_content[0].text,
+        },
+      };
+    }
+
+    if (slice.primary.values_content) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          valuesContent: slice.primary.values_content.map(
+            (value) => value.text
+          ),
+        },
+      };
+    }
+
+    if (slice.primary.general_content) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          generalContent: slice.primary.general_content,
+        },
+      };
+    }
+
+    if (slice.primary.specifics_content) {
+      formattedSlices = {
+        ...formattedSlices,
+        [slice.slice_type]: {
+          ...formattedSlices[slice.slice_type],
+          specificsContent: slice.primary.specifics_content,
         },
       };
     }
