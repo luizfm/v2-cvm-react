@@ -12,6 +12,7 @@ import Goals from '_components/goals';
 import TextSection from '_components/text-section';
 import DoubleTextSection from '_components/double-text-section';
 import MultipleDownloadLinks from '_components/multiple-download-links';
+import HelpCarousel from '_components/help-carousel';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -29,6 +30,7 @@ const TYPES = {
   MULTIPLE_DOWNLOADS_LINKS: 'multiple_download_links',
   IDENTITY: 'identity',
   GOALS: 'goals',
+  HELP_CAROUSEL: 'help_carousel',
 };
 
 export const getSlices = (slice, index) => ({
@@ -56,5 +58,8 @@ export const getSlices = (slice, index) => ({
       key={`multiple-download-links-${index}`}
       slice={slice}
     />
+  ),
+  [TYPES.HELP_CAROUSEL]: (
+    <HelpCarousel key={`help-carousel-${index}`} slice={slice} />
   ),
 });

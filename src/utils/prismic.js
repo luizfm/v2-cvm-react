@@ -27,6 +27,17 @@ export const formatSliceItems = (sliceItems) => {
       ];
     }
 
+    if (item.donation_label) {
+      formattedSlicesItems = [
+        ...formattedSlicesItems,
+        {
+          donationLabel: item.donation_label?.[0].text,
+          donationContent: item.donation_content,
+          donationAnimation: item.animation?.[0].text,
+        },
+      ];
+    }
+
     if (item.download_label) {
       formattedSlicesItems = [
         ...formattedSlicesItems,

@@ -17,6 +17,10 @@
     height: 2.4rem;
     width: 2.4rem;
   }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 }
 
 /* Button Themes */
@@ -28,10 +32,6 @@
   .adornment {
     fill: white;
   }
-
-  &:hover {
-    filter: brightness(0.9);
-  }
 }
 
 .lightGreen {
@@ -41,17 +41,19 @@
   .adornment {
     fill: var(--gray-64);
   }
-
-  &:hover {
-    filter: brightness(0.9);
-  }
 }
 
 .yellow {
   background-color: var(--yellow-500);
   color: var(--gray-80);
+}
 
-  &:hover {
-    filter: brightness(0.9);
-  }
+.pink-white {
+  background-color: white;
+  color: var(--pink-500);
+}
+
+.transparent {
+  background-color: transparent;
+  color: var(--gray-80);
 }

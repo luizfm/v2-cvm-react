@@ -1,4 +1,5 @@
 import React from 'react';
+import { SwiperSlide } from 'swiper/react';
 
 import { prismicSlicePropTypes } from '_utils/proptypes';
 import Slider from '_components/slider';
@@ -12,7 +13,13 @@ const Hero = ({ slice }) => (
       backgroundImage: `url(${slice.backgroundImage.url})`,
     }}
   >
-    <Slider items={slice.items} />
+    <Slider>
+      {slice.items.map((item) => (
+        <SwiperSlide key={item}>
+          <img src={item} className={styles.image} alt="" />
+        </SwiperSlide>
+      ))}
+    </Slider>
   </section>
 );
 
