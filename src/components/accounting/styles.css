@@ -31,6 +31,7 @@
   .accounting-box {
     grid-area: box;
     justify-self: flex-end;
+    margin: 0 auto;
   }
 
   .lottie-animation {
