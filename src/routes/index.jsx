@@ -17,6 +17,7 @@ const Routes = () => (
       <Route path="/news/:newsId" element={<App />} />
       <Route path="/about-us" element={<App />} />
       <Route path="/services" element={<App />} />
+      <Route path="/help" element={<App />} />
     </Switch>
   </Router>
 );

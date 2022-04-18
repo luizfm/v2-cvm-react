@@ -30,6 +30,7 @@
 
       .nav-link {
         color: var(--gray-80);
+        justify-content: flex-start;
       }
 
       &:hover {

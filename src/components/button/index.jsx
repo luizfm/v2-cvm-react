@@ -12,6 +12,8 @@ export const ButtonTheme = {
   GRAY: 'gray',
   LIGHT_GREEN: 'lightGreen',
   YELLOW: 'yellow',
+  PINK_WHITE: 'pink-white',
+  TRANSPARENT: 'transparent',
 };
 
 const Button = ({
