@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
@@ -13,11 +14,17 @@ const htmlPlugin = new HtmlWebPackPlugin({
   filename: './index.html',
 });
 
+const environmentPlugin = new webpack.DefinePlugin({
+  'process.env': {
+    PRISMIC_ACCESS_TOKEN: JSON.stringify(process.env.PRISMIC_ACCESS_TOKEN),
+    PRISMIC_REPOSITORY_URL: JSON.stringify(process.env.PRISMIC_REPOSITORY_URL),
+  },
+});
+
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
     publicPath: '/',
   },
   devServer: {
@@ -129,5 +136,5 @@ module.exports = {
       _store: path.resolve(__dirname, 'src/store'),
     },
   },
-  plugins: [htmlPlugin, miniCssPlugin, dotenv],
+  plugins: [htmlPlugin, miniCssPlugin, environmentPlugin],
 };
