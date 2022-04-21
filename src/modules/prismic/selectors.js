@@ -39,7 +39,8 @@ export const prismicNewsResumeSelector = createSelector(
     const newsResume = slicedNews?.keySeq().toArray();
 
     const list = newsResume?.map((key) => ({
-      title: key,
+      title: newsList?.getIn(['post', key, 'title']),
+      link: key,
       publicationDate: slicedNews.getIn([`${key}`, 'publicationDate']),
     }));
 

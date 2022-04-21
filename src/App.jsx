@@ -30,7 +30,10 @@ const App = () => {
   const [documentUID, setDocumentUID] = useState('');
 
   useEffect(() => {
-    const { docName, uid } = prismicPathFormatter(pathname);
+    const { docName, uid } = prismicPathFormatter(
+      pathname,
+      !pathname.includes(PRISMIC_TYPE.NEWS)
+    );
 
     setDocumentName(docName);
     setDocumentUID(uid);

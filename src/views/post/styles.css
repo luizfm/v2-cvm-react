@@ -6,4 +6,12 @@
   max-width: 72rem;
   margin: 0 auto;
   padding: 8rem 0;
+
+  .post-title {
+    height: 2.4rem;
+    line-height: 3.2rem;
+    color: var(--gray-100);
+    font-weight: 600;
+    margin-bottom: 3.2rem;
+  }
 }

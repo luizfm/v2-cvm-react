@@ -11,5 +11,8 @@
 
   .news-button {
     border-radius: 0.4rem;
+    padding: 1.2rem 1.6rem;
+    height: auto;
+    text-align: center;
   }
 }
