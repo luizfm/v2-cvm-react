@@ -33,6 +33,15 @@ const reducer = createReducer(INITIAL_STATE, {
               'publicationDate',
             ],
             document.publicationDate
+          )
+          .setIn(
+            [
+              `${document.type}`,
+              `${document.group}`,
+              `${document.uid}`,
+              'title',
+            ],
+            document.title
           );
       });
 

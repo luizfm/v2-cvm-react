@@ -19,7 +19,7 @@ const NewsSectionItem = ({ newsItem, className }) => {
       <Button
         className={styles['news-button']}
         theme={ButtonTheme.LIGHT_GREEN}
-        link={`/news/${newsItem.title}`}
+        link={`/news/${newsItem.link}`}
       >
         {newsItem.title}
       </Button>
@@ -30,6 +30,7 @@ const NewsSectionItem = ({ newsItem, className }) => {
 NewsSectionItem.propTypes = {
   newsItem: PropTypes.shape({
     title: PropTypes.string,
+    link: PropTypes.string,
     publicationDate: PropTypes.string,
   }).isRequired,
   className: PropTypes.string,

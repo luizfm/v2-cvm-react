@@ -136,5 +136,9 @@ module.exports = {
       _store: path.resolve(__dirname, 'src/store'),
     },
   },
-  plugins: [htmlPlugin, miniCssPlugin, environmentPlugin],
+  plugins: [
+    htmlPlugin,
+    miniCssPlugin,
+    ...(isDevelopment ? [dotenv] : [environmentPlugin]),
+  ],
 };

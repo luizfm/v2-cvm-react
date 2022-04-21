@@ -302,6 +302,7 @@ export const formatPrismicAsRichText = (prismic) => {
           type: document.type,
           publicationDate: document.last_publication_date,
           elements: document.data.content,
+          title: document.data.title[0]?.text,
           group: document.data.element_group[0]?.text,
         },
       ];
@@ -311,9 +312,11 @@ export const formatPrismicAsRichText = (prismic) => {
   return documents;
 };
 
-export const prismicPathFormatter = (pathname) => {
+export const prismicPathFormatter = (pathname, decamelize) => {
   const decamelizedPath = pathname.replace(/-/gi, '_');
-  const splittedPath = decamelizedPath.split('/');
+  const splittedPath = decamelize
+    ? decamelizedPath.split('/')
+    : pathname.split('/');
 
   if (splittedPath.length > 1) {
     const [_, docName, uid] = splittedPath;
