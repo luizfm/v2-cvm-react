@@ -13,6 +13,7 @@ import TextSection from '_components/text-section';
 import DoubleTextSection from '_components/double-text-section';
 import MultipleDownloadLinks from '_components/multiple-download-links';
 import HelpCarousel from '_components/help-carousel';
+import ImageGallery from '_components/image-gallery';
 
 const TYPES = {
   HERO_SECTION: 'hero_section',
@@ -31,6 +32,7 @@ const TYPES = {
   IDENTITY: 'identity',
   GOALS: 'goals',
   HELP_CAROUSEL: 'help_carousel',
+  MULTIPLE_IMAGES: 'multiple_images',
 };
 
 export const getSlices = (slice, index) => ({
@@ -61,5 +63,8 @@ export const getSlices = (slice, index) => ({
   ),
   [TYPES.HELP_CAROUSEL]: (
     <HelpCarousel key={`help-carousel-${index}`} slice={slice} />
+  ),
+  [TYPES.MULTIPLE_IMAGES]: (
+    <ImageGallery key={`image-gallery-${index}`} slice={slice} />
   ),
 });

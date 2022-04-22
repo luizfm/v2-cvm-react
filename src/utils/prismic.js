@@ -9,6 +9,11 @@ export const formatSliceItems = (sliceItems) => {
         {
           title: item.title?.[0].text,
           text: item.text?.[0].text,
+          ...(item.image
+            ? {
+                imageUrl: item?.image?.url,
+              }
+            : {}),
         },
       ];
     }
