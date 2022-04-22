@@ -28,7 +28,7 @@
     max-width: 102.4rem;
     margin: 1.2rem 0;
 
-    @media (--sm-viewport) {
+    @media (--sm-viewport), (--md-viewport) {
       width: 100%;
       box-sizing: border-box;
       padding: 0 2.4rem;
@@ -55,6 +55,12 @@
     max-height: 50rem;
     max-width: 50rem;
     object-fit: contain;
+
+    @media (--md-viewport) {
+      margin-left: 3rem;
+      max-height: 40rem;
+      max-width: 40rem;
+    }
 
     @media (--sm-viewport) {
       margin-left: 1.2rem;
