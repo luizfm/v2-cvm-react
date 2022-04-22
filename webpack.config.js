@@ -71,6 +71,7 @@ module.exports = {
         exclude: [
           /node_modules/,
           path.resolve(__dirname, './src/components/slider/lib'),
+          path.resolve(__dirname, './src/components/image-gallery/lib'),
         ],
         use: [
           'style-loader',

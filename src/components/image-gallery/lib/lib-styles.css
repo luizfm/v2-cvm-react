@@ -1,0 +1,11 @@
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  max-height: 60rem;
+  border-radius: 0.8rem;
+}
+
+.fullscreen .image-gallery-slide .image-gallery-image {
+  max-height: calc(100vh - 9rem);
+}
+
+
+
