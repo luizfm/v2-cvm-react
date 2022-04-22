@@ -20,6 +20,7 @@ const MultipleDownloadLinks = ({ slice }) => (
           >
             <Button
               className={styles.link}
+              externalUrl
               link={item.downloadLink}
               theme={ButtonTheme.YELLOW}
             >
