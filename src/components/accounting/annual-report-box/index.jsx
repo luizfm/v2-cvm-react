@@ -19,6 +19,8 @@ const AnnualReportBox = ({ balanceReports, className }) => (
         <Button
           endAdornment={PdfIcon}
           key={report.year}
+          externalUrl
+          link={report.link}
           className={styles['report-button']}
         >
           {report.year}
