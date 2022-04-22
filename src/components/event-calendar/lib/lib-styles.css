@@ -1,1 +1,10 @@
-@import 'react-big-calendar/lib/sass/styles.scss'
+@import 'react-big-calendar/lib/sass/styles.scss';
+
+.rbc-calendar {
+  @media (--lg-viewport) {
+    width: 112rem;
+  }
+
+  margin: 0 auto;
+
+}
