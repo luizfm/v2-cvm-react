@@ -6,8 +6,6 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import ImageGallery from '_components/image-gallery';
-
 import App from '../App';
 
 const Routes = () => (
@@ -21,6 +19,7 @@ const Routes = () => (
       <Route path="/services" element={<App />} />
       <Route path="/help" element={<App />} />
       <Route path="/gallery" element={<App />} />
+      <Route path="/calendar" element={<App />} />
     </Switch>
   </Router>
 );

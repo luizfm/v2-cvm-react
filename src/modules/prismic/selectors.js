@@ -10,6 +10,9 @@ export const getPrismicBaseApp = (state) => state.prismic.get('base_app');
 export const getFooterSelector = (state) =>
   state.prismic.getIn(['base_app', 'footer']);
 
+export const getCalendarEvents = (state) =>
+  state.prismic.getIn(['calendar', 'event_list', 'items']);
+
 export const prismicFooterSelector = createSelector(
   getFooterSelector,
   (footer) => {

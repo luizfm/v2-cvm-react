@@ -1,9 +1,13 @@
+const REPEATABLE_TYPES = {
+  EVENT_LIST: 'event_list',
+};
+
 /* eslint-disable indent */
-export const formatSliceItems = (sliceItems) => {
+export const formatSliceItems = (sliceItems, type) => {
   let formattedSlicesItems = [];
 
   sliceItems.forEach((item) => {
-    if (item.title) {
+    if (item.title && type !== REPEATABLE_TYPES.EVENT_LIST) {
       formattedSlicesItems = [
         ...formattedSlicesItems,
         {
@@ -28,6 +32,18 @@ export const formatSliceItems = (sliceItems) => {
                 image: item.image.url,
               }
             : {}),
+        },
+      ];
+    }
+
+    if (type === REPEATABLE_TYPES.EVENT_LIST) {
+      formattedSlicesItems = [
+        ...formattedSlicesItems,
+        {
+          title: item.title[0].text,
+          start: new Date(item.start_at),
+          end: new Date(item.end_at),
+          allDay: item.all_day,
         },
       ];
     }
@@ -251,7 +267,7 @@ export const formatSlices = (slices) => {
     }
 
     if (slice.items) {
-      const items = formatSliceItems(slice.items);
+      const items = formatSliceItems(slice.items, slice.slice_type);
       formattedSlices = {
         ...formattedSlices,
         [slice.slice_type]: {
