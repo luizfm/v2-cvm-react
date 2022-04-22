@@ -8,7 +8,7 @@
     flex-direction: row-reverse;
   }
 
-  @media (--md-viewport) {
+  @media (--md-viewport), (--sm-viewport) {
     flex-direction: column;
     row-gap: 4.8rem;
 

@@ -5,6 +5,10 @@
   color: white;
   padding: 8rem 4.8rem;
 
+  @media (--md-viewport), (--sm-viewport) {
+    padding: 8rem 2.4rem;
+  }
+
   .identity-wrapper {
     max-width: 112rem;
     margin: 0 auto;
