@@ -28,6 +28,7 @@
     line-height: 2rem;
     font-weight: 400;
     margin-top: 2rem;
+    text-align: center;
     padding-bottom: 2rem;
     border-bottom: 0.1rem solid var(--blue-500);
   }

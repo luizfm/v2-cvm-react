@@ -13,8 +13,8 @@ const Post = ({ slice }) => {
 
   return (
     <div className={styles['post-container']}>
-      <h1 className={styles['post-title']}>{slice[uid].title}</h1>
-      <PrismicRichText content={slice[uid]?.pageElements} />
+      <h1 className={styles['post-title']}>{slice?.[uid]?.title}</h1>
+      <PrismicRichText content={slice?.[uid]?.pageElements} />
     </div>
   );
 };

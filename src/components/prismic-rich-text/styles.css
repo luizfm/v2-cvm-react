@@ -27,8 +27,14 @@
     color: var(--gray-80);
     max-width: 102.4rem;
     margin: 1.2rem 0;
-    align-self: center;
+
+    @media (--sm-viewport) {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 2.4rem;
+    }
   }
+
 
   li {
     list-style: square;
@@ -45,8 +51,15 @@
   img {
     margin: 3.2rem auto;
     border-radius: 0.4rem;
+    margin-left: 12rem;
     max-height: 50rem;
     max-width: 50rem;
     object-fit: contain;
+
+    @media (--sm-viewport) {
+      margin-left: 1.2rem;
+      max-height: 25rem;
+      max-width: 25rem;
+    }
   }
 }

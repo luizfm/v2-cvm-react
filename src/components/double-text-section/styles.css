@@ -19,9 +19,11 @@
       height: inherit;
       vertical-align: top;
       justify-content: flex-start;
+      padding-left: 1.2rem;
 
       @media (--md-viewport), (--sm-viewport) {
         border-left: none;
+        padding-left: 0;
       }
     }
   }

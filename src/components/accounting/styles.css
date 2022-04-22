@@ -7,16 +7,12 @@
   column-gap: 12rem;
   padding: 0 6rem 6rem;
 
-  @media(--md-viewport) {
+  @media (--md-viewport), (--sm-viewport) {
     padding: 2.4rem;
 
     display: flex;
     flex-direction: column;
     row-gap: 4rem;
-  }
-
-  @media(--sm-viewport) {
-    padding: 4rem 2.4rem;
   }
 
   .section-title {
