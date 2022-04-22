@@ -23,6 +23,7 @@
         width: 34rem;
 
         @media (--md-viewport), (--sm-viewport) {
+          width: 100%;
           & + .footer-item {
             margin-top: 6rem;
           }
