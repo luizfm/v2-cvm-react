@@ -56,6 +56,7 @@ module.exports = {
       {
         test: /\.css$/,
         include: /node_modules/,
+        exclude: /event-calendar\/lib\/lib-styles\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -67,11 +68,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
+        test: /\.(sass|scss|css)$/,
         exclude: [
           /node_modules/,
           path.resolve(__dirname, './src/components/slider/lib'),
           path.resolve(__dirname, './src/components/image-gallery/lib'),
+          path.resolve(__dirname, './src/components/event-calendar/lib'),
         ],
         use: [
           'style-loader',
@@ -99,19 +101,24 @@ module.exports = {
         ],
       },
       {
-        test: /lib-styles\.css$/,
+        test: /lib-styles\.(sa|sc|c)ss$/,
+        exclude: /event-calendar\/lib\/lib-styles\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              // localIdentName is needed to be able to work with styles.css files
               modules: { localIdentName: '[local]' },
               sourceMap: true,
               importLoaders: 1,
+              import: true,
             },
           },
         ],
+      },
+      {
+        test: /event-calendar\/lib\/lib-styles\.(sa|sc|c)ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.svg$/,
