@@ -13,8 +13,8 @@ const TextSection = ({ slice }) => {
 
   const lottieSizes = useMemo(
     () => ({
-      width: isMobile || isMedium ? 300 : 600,
-      height: isMobile || isMedium ? 150 : 300,
+      width: isMobile || isMedium ? 280 : 560,
+      height: isMobile || isMedium ? 140 : 280,
     }),
     [isMedium, isMobile]
   );
