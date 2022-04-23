@@ -1,0 +1,30 @@
+.double-text-section-container {
+  padding: 8rem 4.8rem;
+
+  @media (--md-viewport), (--sm-viewport) {
+    padding: 2.4rem;
+  }
+
+  .double-text-section-wrapper {
+    max-width: 112rem;
+    margin: 0 auto;
+    display: flex;
+
+    @media (--md-viewport), (--sm-viewport) {
+      flex-direction: column;
+    }
+
+    .second-text {
+      border-left: 0.1rem solid var(--gray-8);
+      height: inherit;
+      vertical-align: top;
+      justify-content: flex-start;
+      padding-left: 1.2rem;
+
+      @media (--md-viewport), (--sm-viewport) {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+  }
+}

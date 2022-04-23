@@ -1,0 +1,18 @@
+.news-section-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2.4rem;
+
+  .news-date {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .news-button {
+    border-radius: 0.4rem;
+    padding: 1.2rem 1.6rem;
+    height: auto;
+    text-align: center;
+  }
+}

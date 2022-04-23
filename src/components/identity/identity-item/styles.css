@@ -1,0 +1,38 @@
+.identity-item-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+  margin-top: 4.8rem;
+  box-sizing: border-box;
+  justify-self: center;
+
+  @media (--md-viewport), (--sm-viewport) {
+    text-align: center;
+  }
+
+  .list {
+    margin-left: 2rem;
+
+    @media (--md-viewport), (--sm-viewport) {
+      padding: 0.1rem;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    @media (--md-viewport), (--sm-viewport) {
+      .list-item {
+        list-style-type: none;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          padding: 0.2rem 0.2rem;
+          background-color: white;
+          border-radius: 50%;
+          margin: 0 1rem 0.5rem;
+        }
+      }
+    }
+  }
+}

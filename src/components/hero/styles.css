@@ -1,0 +1,22 @@
+.hero-section-container {
+  padding: 8rem 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+
+  @media (--sm-viewport), (--md-viewport) {
+    padding: 8rem 2.4rem;
+  }
+}
+
+.image {
+  object-fit: contain;
+  height: 50rem;
+  width: 90%;
+  border-radius: 0.8rem;
+
+  @media (--sm-viewport), (--md-viewport) {
+    width: 100%;
+  }
+}

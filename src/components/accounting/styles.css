@@ -1,0 +1,37 @@
+
+
+.accounting-section-container {
+  display: grid;
+  grid-template: auto 1fr / 1fr 1fr;
+  grid-template-areas: 'section-title section-title' 'box lottie';
+  column-gap: 12rem;
+  padding: 0 6rem 6rem;
+
+  @media (--md-viewport), (--sm-viewport) {
+    padding: 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .section-title {
+    grid-area: section-title;
+    color: var(--yellow-500);
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .accounting-box {
+    grid-area: box;
+    justify-self: flex-end;
+    margin: 0 auto;
+  }
+
+  .lottie-animation {
+    grid-area: lottie;
+    justify-self: flex-start;
+  }
+}

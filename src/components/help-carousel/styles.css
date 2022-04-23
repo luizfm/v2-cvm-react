@@ -1,0 +1,68 @@
+.help-carousel-container {
+  padding: 8rem 4.8rem;
+
+  @media (--md-viewport), (--sm-viewport) {
+    padding: 8rem 2.4rem;
+  }
+
+  .help-carousel-wrapper {
+    max-width: 112rem;
+    margin: 0 auto;
+
+    .title {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      color: var(--gray-100);
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+
+    .prismic-text-wrapper {
+      margin-bottom: 4.8rem;
+      text-align: center;
+
+      p {
+        margin: 1.2rem auto;
+      }
+    }
+
+    .slider-item-container {
+      height: 50rem;
+      width: 50rem;
+      border-radius: 50%;
+      background-color: var(--pink-500);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @media (--md-viewport), (--sm-viewport) {
+        height: 25rem;
+        width: 25rem;
+        display: grid;
+        grid-template-rows: auto 25rem auto;
+      }
+
+      .donation-label {
+        font-size: 2rem;
+        line-height: 2.8rem;
+        margin-bottom: 1.2rem;
+
+        @media (--md-viewport), (--sm-viewport) {
+          margin-top: -6rem;
+        }
+      }
+
+      .help-button {
+        margin-top: 4.8rem;
+        width: 20rem;
+        height: auto;
+
+        @media (--md-viewport), (--sm-viewport) {
+          margin-bottom: -6rem;
+          justify-self: center;
+        }
+      }
+    }
+  }
+}

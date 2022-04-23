@@ -1,0 +1,33 @@
+.text-and-image-item-container {
+  display: flex;
+  font-size: 1.4rem;
+  column-gap: 4.8rem;
+
+
+  &.image-text {
+    flex-direction: row-reverse;
+  }
+
+  @media (--md-viewport), (--sm-viewport) {
+    flex-direction: column;
+    row-gap: 4.8rem;
+
+    &.image-text {
+      flex-direction: column;
+    }
+  }
+
+  .image {
+    height: 30rem;
+    width: 45rem;
+    justify-self: center;
+    align-self: center;
+    object-fit: contain;
+    border-radius: 0.4rem;
+
+    @media (--sm-viewport) {
+      height: 20rem;
+      width: 30rem;
+    }
+  }
+}

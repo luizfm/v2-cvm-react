@@ -6,13 +6,17 @@
     "paths": {
       "_/*": ["src/*"],
       "_components/*": ["src/components"],
+      "_constants/*": ["src/constants"],
       "_assets/*": ["src/assets"],
       "_views/*": ["src/views"],
       "_routes/*": ["src/routes"],
       "_utils/*": ["src/utils"],
       "_hooks/*": ["src/hooks"],
       "_services/*": ["src/services"],
-      "_api/*": ["src/api"]
+      "_middleware/*": ["src/middleware"],
+      "_api/*": ["src/api"],
+      "_modules/*": ["src/modules"],
+      "_store/*": ["src/store"]
     },
   },
   "exclude": ["node_modules", "dist", "dist-server"]
